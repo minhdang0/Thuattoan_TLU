@@ -1,0 +1,15 @@
+ married[i]=men[i-1][i-1]
+        freemen.remove(i)
+        array.append(i)
+        for j in array:
+            if married[i] == married[j] & (i != j):
+                check=married[i]
+                tmp1=women[check].index(i)
+                tmp2=women[check].index(j)
+                if tmp1 > tmp2:
+                    married[j]=check
+                    married[i]=men[i-1][i]
+                    freemen.append(i)
+                    array.remove(i)
+                else:
+                    married[j]=men[j][i]
